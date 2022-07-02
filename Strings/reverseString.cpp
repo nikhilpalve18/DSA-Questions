@@ -1,19 +1,10 @@
 #include <iostream>
 #include <string>
-
 using namespace std;
 
-// function to return length of the string
-int getLength(string str){
-    int length = 0;
-    for(int i=0; i<str.length(); i++){
-        length++;
-    }
-    return length;
-}
 
 // function to reverse a string 
-void reverseString(string &str){   
+string reverseString(string str){   
     //Here we pass the string by address in order to make changes in original string itself
     int start = 0;
     int end = str.length()-1;
@@ -25,18 +16,34 @@ void reverseString(string &str){
         start++;
         end--;
     }
+    return str;
 }
 
+// efficient approach using two pointers
+// bool isPalindrome (string str){
+//     int start = 0;
+//     int end = str.length()-1;
+
+//     while(start < end){
+//         if(str[start] != str[end]){
+//             return false;
+//         }
+//         start++;
+//         end--;
+//     }
+//     return true;
+// }
+
 int main(){
-    string name = "Nikhil";
-    cout << "Original string: " << name << endl;
+    string name = "madam";
+    string rev = reverseString(name);
+    
+    if(name == rev){
+        cout << name << " is palindrome!" << endl;
+    }
+    else{
+        cout << name << " is not palindrome!" << endl;
+    }
 
-    int length = getLength(name);
-    cout << "Length: " << length << endl;
-
-    //function call
-    reverseString(name);
-
-    cout << "Reverse string: " << name << endl;
     return 0;
 }
