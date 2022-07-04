@@ -5,7 +5,6 @@ using namespace std;
 
 // function to reverse a string 
 string reverseString(string str){   
-    //Here we pass the string by address in order to make changes in original string itself
     int start = 0;
     int end = str.length()-1;
 
@@ -33,6 +32,7 @@ string reverseString(string str){
 //     }
 //     return true;
 // }
+
 
 int main(){
     string name = "madam";
